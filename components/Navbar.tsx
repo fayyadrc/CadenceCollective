@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Mic, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/#about' }, // Using hash for scroll in landing
+    { name: 'About', path: '/#about' },
     { name: 'Team', path: '/#team' },
     { name: 'Gallery', path: '/#gallery' },
   ];
@@ -26,8 +26,8 @@ export default function Navbar() {
   const handleScrollToSection = (path: string) => {
     if (path.includes('#')) {
       if (location.pathname !== '/') {
-        // If not on home, navigate to home then scroll
-        return; // Handled by Link usually, but for smooth scroll behavior on same page:
+
+        return;
       }
       const id = path.split('#')[1];
       const element = document.getElementById(id);
@@ -40,19 +40,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/20 backdrop-blur-lg border-b border-white/20 py-4'
-          : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/20 backdrop-blur-lg border-b border-white/20 py-4'
+        : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-primary-dark p-2 rounded-full text-white transition-transform group-hover:scale-110">
-            <Mic size={20} />
-          </div>
+          <img
+            src="/cadence_logo.png"
+            alt="Cadence Collective"
+            className="h-10 w-auto object-contain transition-transform group-hover:scale-110"
+          />
           <span className="font-heading font-bold text-lg tracking-wide text-primary-dark">
-            Cadence<span className="text-accent">.</span>
+            CadenceCollective<span className="text-accent"></span>
           </span>
         </Link>
 

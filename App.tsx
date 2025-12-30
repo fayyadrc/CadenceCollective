@@ -32,13 +32,13 @@ const Layout = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/apply" element={<ApplyPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route 
-            path="/admin" 
+          <Route
+            path="/admin"
             element={
               <ProtectedRoute>
                 <AdminDashboard />
               </ProtectedRoute>
-            } 
+            }
           />
         </Routes>
       </main>

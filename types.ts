@@ -4,6 +4,9 @@ export interface TeamMember {
   role: string;
   shortBio: string;
   image?: string;
+  imagePosition?: string; // CSS object-position value (e.g., "center top", "right center")
+  imageScale?: number; // Scale factor for the image (e.g., 1.5 to zoom in)
+  imageTranslateY?: string; // CSS translateY value (e.g., "-20%" to move up)
   fullBio?: string;
   whyStarted?: string;
   credentials?: string[];
