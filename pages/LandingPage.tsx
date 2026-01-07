@@ -15,7 +15,7 @@ export default function LandingPage() {
       <TimelineSection />
       <TestimonialsSection />
       <TeamSection />
-      <GallerySection />
+      {/* <GallerySection /> */}
       <CTASection />
     </div>
   );
