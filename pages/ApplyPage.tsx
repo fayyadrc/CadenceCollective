@@ -20,16 +20,37 @@ export default function ApplyPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Form Submitted:", formState);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/cc.cadence.collective@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formState,
+          _subject: `New Application: ${formState.name} - Cadence Collective`,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      if (response.ok) {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+      // Optional: Add error handling UI state here if desired
+      alert("Something went wrong with your submission. Please try again or email us directly.");
+    }
   };
 
   return (
