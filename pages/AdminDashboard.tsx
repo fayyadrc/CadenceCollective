@@ -294,6 +294,10 @@ export default function AdminDashboard() {
                           const newTeam = [...formData.team]; newTeam[idx].image = v; setFormData({...formData, team: newTeam});
                       }} />
 
+                      <TextField label="Instagram URL" value={member.instagram || ''} onChange={(v) => {
+                          const newTeam = [...formData.team]; newTeam[idx].instagram = v; setFormData({...formData, team: newTeam});
+                      }} placeholder="https://www.instagram.com/username/" />
+
                       <TextField label="Short Bio (Front of Card)" value={member.shortBio} multiline onChange={(v) => {
                           const newTeam = [...formData.team]; newTeam[idx].shortBio = v; setFormData({...formData, team: newTeam});
                       }} />
@@ -321,9 +325,23 @@ export default function AdminDashboard() {
                             const newTeam = [...formData.team]; newTeam[idx].credentials = v.split('\n').filter(x => x.trim() !== ''); setFormData({...formData, team: newTeam});
                         }} />
                          
-                         <TextField label="Featured In (One per line)" value={member.featuredIn?.join('\n') || ''} multiline onChange={(v) => {
-                            const newTeam = [...formData.team]; newTeam[idx].featuredIn = v.split('\n').filter(x => x.trim() !== ''); setFormData({...formData, team: newTeam});
-                        }} />
+                         <TextField 
+                            label="Featured In (Format: Name | URL - one per line, URL optional)" 
+                            value={member.featuredIn?.map(f => f.url ? `${f.name} | ${f.url}` : f.name).join('\n') || ''} 
+                            multiline 
+                            onChange={(v) => {
+                                const newTeam = [...formData.team]; 
+                                newTeam[idx].featuredIn = v.split('\n')
+                                    .filter(x => x.trim() !== '')
+                                    .map(line => {
+                                        const parts = line.split('|').map(p => p.trim());
+                                        return parts.length > 1 
+                                            ? { name: parts[0], url: parts[1] }
+                                            : { name: parts[0] };
+                                    });
+                                setFormData({...formData, team: newTeam});
+                            }} 
+                        />
                       </div>
                     </div>
                   ))}

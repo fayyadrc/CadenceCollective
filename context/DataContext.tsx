@@ -99,6 +99,7 @@ const defaultContent: SiteContent = {
       shortBio:
         "Blends technical precision with raw emotional expression. Founder of Cadence Collective. Three-time World Champion at WCOPA 2022.",
       image: "/team/jovita.jpg",
+      instagram: "https://www.instagram.com/jovitabhaumik/",
       fullBio:
         "Jovita Bhaumik is a singer-songwriter, performing artist, and the founder of Cadence Collective. She blends technical precision with raw emotional expression, creating work that feels honest, intentional, and creatively daring. Her artistry centres on meaningful storytelling and elevating the voices of young performers.",
       whyStarted:
@@ -114,13 +115,14 @@ const defaultContent: SiteContent = {
         "Regent Music Scholar, Regent International School (2023–2026)",
       ],
       featuredIn: [
-        "Khaleej Times UAE",
-        "Talk 100.3",
-        "Dubai Eye 103.8",
-        "PHLV Radio: Music Asia, Los Angeles",
-        "DubaiOne TV",
-        "Teachers Talk Radio",
-        "Expat Media UAE",
+        { name: "Khaleej Times UAE", url: "https://www.khaleejtimes.com/entertainment/music/dubai-teen-berklee-carnegie-hall" },
+        { name: "Dubai Eye 103.8", url: "https://www.youtube.com/watch?v=MooiDrcv6Dk" },
+        { name: "Talk 100.3", url: "https://www.instagram.com/p/DNnXiRoy1Di/?hl=en" },
+        { name: "PHLV Radio", url: "https://www.youtube.com/watch?v=MpOH-m4QZQs" },
+        { name: "Music Asia, Los Angeles", url: "https://www.youtube.com/watch?v=74V7XW6f9cw" },
+        { name: "Dubai One", url: "https://www.youtube.com/watch?v=NZ22z_HF-Bs" },
+        { name: "Teachers Talk Radio", url: "https://open.spotify.com/episode/7z3tNA1Yrgkn6NNvGJqIBF?si=a903842f46e04ebb" },
+        { name: "Expat Media UAE", url: "https://www.expatmedia.net/teen-singer-songwriter-jovita-bhaumik-makes-music-dubai/2025/08/" },
       ],
     },
     {
@@ -130,6 +132,7 @@ const defaultContent: SiteContent = {
       shortBio:
         "Shapes visual identity and storytelling. Music is her source of emotional clarity. Ensures the Collective's work is authentic and impactful.",
       image: "/team/isabella.png",
+      instagram: "https://www.instagram.com/izzy_yarshenko/",
       fullBio:
         "Isabella Yarshenko serves as the Chief Content Officer of Cadence Collective, shaping the visual identity, tone, and storytelling across all platforms. She brings a sharp eye for detail, a clear creative voice, and a commitment to presenting the Collective’s work with authenticity and impact.",
       personalConnection:
@@ -147,6 +150,7 @@ const defaultContent: SiteContent = {
       imagePosition: "center bottom",
       imageScale: 1.8,
       imageTranslateY: "-15%",
+      instagram: "https://www.instagram.com/ii.krr1sh/",
       fullBio:
         "Krish leads the marketing direction of Cadence Collective as Chief Marketing Officer. He focuses on shaping brand identity, developing strategy, and expanding the Collective’s reach with campaigns that are bold, thoughtful, and artist-focused.",
       personalConnection:

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Award, Heart, Radio, Music, Target } from 'lucide-react';
+import { X, Award, Heart, Radio, Music, Target, Instagram } from 'lucide-react';
 import { Reveal } from '../ui/Reveal';
 import { useData } from '../../context/DataContext';
 import { TeamMember } from '../../types';
@@ -83,6 +83,18 @@ const TeamModal: React.FC<{ member: TeamMember | null; isOpen: boolean; onClose:
                         <h2 className="font-heading text-4xl font-bold mb-1">{member.name}</h2>
                         <p className="text-accent font-medium text-sm uppercase tracking-widest mb-6">{member.role}</p>
 
+                        {member.instagram && (
+                            <a
+                                href={member.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-all mb-6 text-sm font-medium border border-white/20"
+                            >
+                                <Instagram size={16} />
+                                Follow on Instagram
+                            </a>
+                        )}
+
                         {member.credentials && member.credentials.length > 0 && (
                             <div className="w-full">
                                 <h3 className="text-xs font-bold uppercase text-white/40 mb-4 tracking-widest flex items-center gap-2">
@@ -138,9 +150,21 @@ const TeamModal: React.FC<{ member: TeamMember | null; isOpen: boolean; onClose:
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
                                         {member.featuredIn.map((feat, idx) => (
-                                            <span key={idx} className="px-3 py-1.5 bg-white/60 border border-primary-dark/5 rounded-lg text-xs font-bold text-primary-dark/70 shadow-sm">
-                                                {feat}
-                                            </span>
+                                            feat.url ? (
+                                                <a
+                                                    key={idx}
+                                                    href={feat.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="px-3 py-2 bg-white border border-primary-dark/20 rounded-lg text-xs font-semibold text-primary-dark shadow-sm hover:bg-accent hover:text-white hover:border-accent transition-all cursor-pointer"
+                                                >
+                                                    {feat.name}
+                                                </a>
+                                            ) : (
+                                                <span key={idx} className="px-3 py-2 bg-white border border-primary-dark/20 rounded-lg text-xs font-semibold text-primary-dark shadow-sm">
+                                                    {feat.name}
+                                                </span>
+                                            )
                                         ))}
                                     </div>
                                 </div>

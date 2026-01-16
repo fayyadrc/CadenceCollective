@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, Instagram, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [joinUsDropdownOpen, setJoinUsDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -70,12 +71,43 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
-          <Link
-            to="/apply"
-            className="px-6 py-2.5 bg-primary-dark text-white font-bold rounded-full hover:bg-accent transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-purple-900/20"
-          >
-            Join Us
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => setJoinUsDropdownOpen(!joinUsDropdownOpen)}
+              onBlur={() => setTimeout(() => setJoinUsDropdownOpen(false), 200)}
+              className="px-6 py-2.5 bg-primary-dark text-white font-bold rounded-full hover:bg-accent transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-purple-900/20 flex items-center gap-2"
+            >
+              Join Us
+              <ChevronDown size={16} className={`transition-transform ${joinUsDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {joinUsDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-full mt-2 right-0 bg-white rounded-lg shadow-xl border border-primary-dark/10 overflow-hidden min-w-[220px]"
+                >
+                  <a
+                    href="https://www.instagram.com/cadence.collective_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-5 py-3 hover:bg-accent/10 transition-colors border-b border-primary-dark/10"
+                  >
+                    <Instagram size={20} className="text-primary-dark" />
+                    <span className="font-medium text-primary-dark">Follow us on Instagram</span>
+                  </a>
+                  <a
+                    href="mailto:cadencecollectivefc@gmail.com"
+                    className="flex items-center gap-3 px-5 py-3 hover:bg-accent/10 transition-colors"
+                  >
+                    <Mail size={20} className="text-primary-dark" />
+                    <span className="font-medium text-primary-dark">Email us for more info</span>
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -107,13 +139,25 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/apply"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-8 py-3 bg-primary-dark text-white font-bold rounded-full mt-2"
-              >
-                Join Us
-              </Link>
+              <div className="flex flex-col items-center gap-3 mt-2">
+                <p className="font-bold text-primary-dark text-lg">Join Us</p>
+                <a
+                  href="https://www.instagram.com/cadence.collective_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-2.5 bg-primary-dark text-white font-medium rounded-full hover:bg-accent transition-all"
+                >
+                  <Instagram size={18} />
+                  Follow on Instagram
+                </a>
+                <a
+                  href="mailto:cadencecollectivefc@gmail.com"
+                  className="flex items-center gap-2 px-6 py-2.5 bg-primary-dark text-white font-medium rounded-full hover:bg-accent transition-all"
+                >
+                  <Mail size={18} />
+                  Email for info
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

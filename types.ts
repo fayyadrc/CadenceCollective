@@ -10,9 +10,10 @@ export interface TeamMember {
   fullBio?: string;
   whyStarted?: string;
   credentials?: string[];
-  featuredIn?: string[];
+  featuredIn?: { name: string; url?: string }[];
   personalConnection?: string;
   roleFocus?: string;
+  instagram?: string; // Instagram handle or URL
 }
 
 export interface Testimonial {
