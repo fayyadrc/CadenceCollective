@@ -98,7 +98,7 @@ export default function Navbar() {
                     <span className="font-medium text-primary-dark">Follow us on Instagram</span>
                   </a>
                   <a
-                    href="mailto:cadencecollectivefc@gmail.com"
+                    href="mailto:cc.cadence.collective@gmail.com"
                     className="flex items-center gap-3 px-5 py-3 hover:bg-accent/10 transition-colors"
                   >
                     <Mail size={20} className="text-primary-dark" />
@@ -151,7 +151,7 @@ export default function Navbar() {
                   Follow on Instagram
                 </a>
                 <a
-                  href="mailto:cadencecollectivefc@gmail.com"
+                  href="mailto:cc.cadence.collective@gmail.com"
                   className="flex items-center gap-2 px-6 py-2.5 bg-primary-dark text-white font-medium rounded-full hover:bg-accent transition-all"
                 >
                   <Mail size={18} />
