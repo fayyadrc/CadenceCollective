@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import ApplyPage from './pages/ApplyPage';
 import LoginPage from './pages/LoginPage';
 import AdminDashboard from './pages/AdminDashboard';
+import { GalleryPage } from './pages/GalleryPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { AuthProvider } from './context/AuthContext';
@@ -31,6 +32,7 @@ const Layout = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/admin"

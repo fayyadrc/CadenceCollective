@@ -21,7 +21,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/#about' },
     { name: 'Team', path: '/#team' },
-    { name: 'Gallery', path: '/#gallery' },
+    { name: 'Gallery', path: '/gallery' },
   ];
 
   const handleScrollToSection = (path: string) => {

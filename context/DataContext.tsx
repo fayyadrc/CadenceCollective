@@ -142,14 +142,12 @@ const defaultContent: SiteContent = {
     },
     {
       id: "tm3",
-      name: "Krish",
+      name: "Krrish",
       role: "Chief Marketing Officer",
       shortBio:
         "Leads marketing direction. Passionate about merging music and art into a unified creative ecosystem to connect people.",
-      image: "/team/krrish.png",
-      imagePosition: "center bottom",
-      imageScale: 1.8,
-      imageTranslateY: "-15%",
+      image: "/team/krrish.jpg", 
+      imagePosition: "center",
       instagram: "https://www.instagram.com/ii.krr1sh/",
       fullBio:
         "Krish leads the marketing direction of Cadence Collective as Chief Marketing Officer. He focuses on shaping brand identity, developing strategy, and expanding the Collective’s reach with campaigns that are bold, thoughtful, and artist-focused.",

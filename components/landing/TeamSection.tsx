@@ -68,14 +68,17 @@ const TeamModal: React.FC<{ member: TeamMember | null; isOpen: boolean; onClose:
                     <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
                     <div className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
-                        <div className="relative mb-6 w-full overflow-hidden rounded-2xl">
+                        <div className="relative mb-6 w-full aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden bg-primary-dark">
                             <div className="absolute inset-0 rounded-2xl bg-accent blur-md opacity-30"></div>
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-full aspect-[3/4] rounded-2xl object-cover border-4 border-white/10 shadow-2xl relative z-10 bg-primary-dark"
+                                className="w-full h-full object-cover relative z-10"
                                 style={{ 
-                                    objectPosition: 'top center'
+                                    objectPosition: member.imagePosition || 'top center',
+                                    transform: (member.imageScale || member.imageTranslateY) 
+                                        ? `${member.imageScale ? `scale(${member.imageScale})` : ''} ${member.imageTranslateY ? `translateY(${member.imageTranslateY})` : ''}`.trim()
+                                        : undefined
                                 }}
                             />
                         </div>
