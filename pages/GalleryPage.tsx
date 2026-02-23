@@ -155,8 +155,6 @@ export const GalleryPage: React.FC = () => {
           ))}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
