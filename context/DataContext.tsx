@@ -150,9 +150,9 @@ const defaultContent: SiteContent = {
       imagePosition: "center",
       instagram: "https://www.instagram.com/ii.krr1sh/",
       fullBio:
-        "Krish leads the marketing direction of Cadence Collective as Chief Marketing Officer. He focuses on shaping brand identity, developing strategy, and expanding the Collective’s reach with campaigns that are bold, thoughtful, and artist-focused.",
+        "Krrish leads the marketing direction of Cadence Collective as Chief Marketing Officer. He focuses on shaping brand identity, developing strategy, and expanding the Collective’s reach with campaigns that are bold, thoughtful, and artist-focused.",
       personalConnection:
-        "Krish is passionate about merging music and art into a unified creative ecosystem. He values the way music sparks collaboration, fuels expression, and connects people from completely different backgrounds. That belief sits at the core of his work.",
+        "Krrish is passionate about merging music and art into a unified creative ecosystem. He values the way music sparks collaboration, fuels expression, and connects people from completely different backgrounds. That belief sits at the core of his work.",
       roleFocus:
         "He drives social media strategy, audience growth, and community engagement — building pathways for the Collective to reach more artists, inspire new audiences, and strengthen its presence across platforms.",
     },

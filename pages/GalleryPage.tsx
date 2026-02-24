@@ -10,6 +10,7 @@ interface GalleryItem {
   description: string;
   image: string;
   imageAlt: string;
+  video?: string;
   reverse?: boolean;
 }
 
@@ -52,11 +53,12 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 'facebook-live',
-    title: 'Cohort 2 — Facebook Live Showcase',
+    title: 'Cohort 3 — Facebook Live Showcase',
     subtitle: 'First exposure, real pressure, genuine wins.',
     description: 'Students performed solo pieces in a live-streamed showcase watched by over 500 viewers, followed by a full choir performance. For many, it was their first experience performing publicly — and it showed how far they\'d come.',
     image: '/images/gallery/cohort-1-farewell.png',
     imageAlt: 'Facebook Live Showcase',
+    video: '/videos/gallery/Facebook_Live_clips.mp4',
     reverse: false,
   },
 ];
@@ -70,15 +72,24 @@ const GalleryItem: React.FC<{ item: GalleryItem; index: number }> = ({ item, ind
       viewport={{ once: true, margin: '-100px' }}
       className={`flex flex-col ${item.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center mb-24 lg:mb-32`}
     >
-      {/* Image Section */}
+      {/* Media Section */}
       <div className="w-full lg:w-1/2">
         <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
-          <div className="absolute inset-0 bg-accent/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-          <img
-            src={item.image}
-            alt={item.imageAlt}
-            className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+          <div className="absolute inset-0 bg-accent/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+          {item.video ? (
+            <video
+              src={item.video}
+              poster={item.image}
+              controls
+              className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <img
+              src={item.image}
+              alt={item.imageAlt}
+              className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          )}
         </div>
       </div>
 
