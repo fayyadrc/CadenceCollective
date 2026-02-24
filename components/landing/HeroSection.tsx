@@ -35,7 +35,7 @@ export const HeroSection: React.FC = () => {
                 </Reveal>
 
                 <Reveal width="100%">
-                    <h1 className="font-heading text-5xl md:text-8xl font-bold leading-[1.1] md:leading-[0.9] text-primary-dark mb-6 md:mb-8">
+                    <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-[1.1] md:leading-[0.9] text-primary-dark mb-6 md:mb-8">
                         {content.hero.titleLine1} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-accent italic">
                             {content.hero.titleLine2}

@@ -217,8 +217,8 @@ export const TeamSection: React.FC = () => {
         <section id="team" className="py-24 px-6 bg-cream">
             <div className="max-w-6xl mx-auto">
                 <Reveal width="100%">
-                    <h2 className="font-heading text-5xl font-bold text-primary-dark mb-4 text-center">Meet the Team</h2>
-                    <p className="text-center text-primary-dark/60 mb-16 max-w-2xl mx-auto">Driven by passion, united by music. Click on a profile to read their full story.</p>
+                    <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary-dark mb-4 text-center">Meet the Team</h2>
+                    <p className="text-center text-primary-dark/60 mb-12 md:mb-16 max-w-2xl mx-auto">Driven by passion, united by music. Click on a profile to read their full story.</p>
                 </Reveal>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

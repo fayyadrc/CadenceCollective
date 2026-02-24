@@ -34,6 +34,16 @@ const galleryItems: GalleryItem[] = [
     reverse: true,
   },
   {
+    id: 'facebook-live',
+    title: 'Cohort 2 — Facebook Live Showcase',
+    subtitle: 'First exposure, real pressure, genuine wins.',
+    description: 'Students performed solo pieces in a live-streamed showcase watched by over 500 viewers, followed by a full choir performance. For many, it was their first experience performing publicly — and it showed how far they\'d come.',
+    image: '/images/gallery/cohort-1-farewell.png',
+    imageAlt: 'Facebook Live Showcase',
+    video: '/videos/gallery/Facebook_Live_clips.mp4',
+    reverse: false,
+  },
+  {
     id: 'cohort3',
     title: 'Cohort 3 — Onsite & In Sync',
     subtitle: 'From concept to collective.',
@@ -50,16 +60,6 @@ const galleryItems: GalleryItem[] = [
     image: '/images/gallery/cohort-1.jpeg',
     imageAlt: 'Cohort 3 Choir Live Performance',
     reverse: true,
-  },
-  {
-    id: 'facebook-live',
-    title: 'Cohort 3 — Facebook Live Showcase',
-    subtitle: 'First exposure, real pressure, genuine wins.',
-    description: 'Students performed solo pieces in a live-streamed showcase watched by over 500 viewers, followed by a full choir performance. For many, it was their first experience performing publicly — and it showed how far they\'d come.',
-    image: '/images/gallery/cohort-1-farewell.png',
-    imageAlt: 'Facebook Live Showcase',
-    video: '/videos/gallery/Facebook_Live_clips.mp4',
-    reverse: false,
   },
 ];
 
@@ -147,7 +147,7 @@ export const GalleryPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="font-heading text-4xl md:text-7xl font-bold text-white mb-6">
               Our Journey in
               <span className="text-accent"> Frames</span>
             </h1>
