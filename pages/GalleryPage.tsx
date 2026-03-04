@@ -8,8 +8,8 @@ interface GalleryItem {
   title: string;
   subtitle: string;
   description: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   video?: string;
   reverse?: boolean;
 }
@@ -20,7 +20,7 @@ const galleryItems: GalleryItem[] = [
     title: 'Cohort 1 — Online Beginning',
     subtitle: 'Where it started.',
     description: "Cadence Collective's first cohort met online during the pandemic — small, experimental, and built entirely on curiosity. Low production, high commitment. This group proved the idea worked.",
-    image: '/images/gallery/cohort-1-online.jpeg',
+    image: '/images/gallery/cohort-1-v2.jpeg',
     imageAlt: 'Cohort 1 Online Sessions',
     reverse: false,
   },
@@ -57,8 +57,7 @@ const galleryItems: GalleryItem[] = [
     title: 'Cohort 3 Choir — Live Performance',
     subtitle: 'Real stage. Real audience. Real growth.',
     description: 'Six students performed live at the Regent Performing Arts Evening, singing before 200+ audience members under live direction. A defining moment of stage presence, discipline, and confidence.',
-    image: '/images/gallery/cohort-1.jpeg',
-    imageAlt: 'Cohort 3 Choir Live Performance',
+    video: '/videos/gallery/cohort-3-clip.mp4',
     reverse: true,
   },
 ];
