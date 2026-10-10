@@ -11,6 +11,7 @@ interface GalleryItem {
   image?: string;
   imageAlt?: string;
   video?: string;
+  portrait?: boolean; // vertical (9:16) video, shown uncropped
   reverse?: boolean;
 }
 
@@ -34,16 +35,6 @@ const galleryItems: GalleryItem[] = [
     reverse: true,
   },
   {
-    id: 'facebook-live',
-    title: 'Cohort 2 — Facebook Live Showcase',
-    subtitle: 'First exposure, real pressure, genuine wins.',
-    description: 'Students performed solo pieces in a live-streamed showcase watched by over 500 viewers, followed by a full choir performance. For many, it was their first experience performing publicly — and it showed how far they\'d come.',
-    image: '/images/gallery/cohort-1-farewell.png',
-    imageAlt: 'Facebook Live Showcase',
-    video: '/videos/gallery/Facebook_Live_clips.mp4',
-    reverse: false,
-  },
-  {
     id: 'cohort3',
     title: 'Cohort 3 — Onsite & In Sync',
     subtitle: 'From concept to collective.',
@@ -60,6 +51,36 @@ const galleryItems: GalleryItem[] = [
     video: '/videos/gallery/cohort-3-clip.mp4',
     reverse: true,
   },
+  {
+    id: 'facebook-live',
+    title: 'Cohort 2 — Facebook Live Showcase',
+    subtitle: 'First exposure, real pressure, genuine wins.',
+    description: 'Students performed solo pieces in a live-streamed showcase watched by over 500 viewers, followed by a full choir performance. For many, it was their first experience performing publicly — and it showed how far they\'d come.',
+    image: '/images/gallery/cohort-1-farewell.png',
+    imageAlt: 'Facebook Live Showcase',
+    video: '/videos/gallery/Facebook_Live_clips.mp4',
+    reverse: false,
+  },
+  {
+    id: 'cohort4-showcase',
+    title: 'Cohort 4 Choir — Final Showcase',
+    subtitle: 'Four days. 45 first-time singers. One choir.',
+    description: 'None of the 45 students had ever sung before. In just four days of classes, they went from finding their voices for the first time to singing together as a choir on stage at KIIT-JEE Public School, Gurgaon. Students also stepped beyond the choir, taking part in soloist and duo competitions — their first time performing on stage, and a celebration of the confidence they built in just four days.',
+    image: '/images/gallery/cohort-4-poster.jpg',
+    video: '/videos/gallery/cohort-4-showcase.mp4',
+    portrait: true,
+    reverse: true,
+  },
+  {
+    id: 'cohort5-showcase',
+    title: 'Cohort 5 Choir — Final Showcase',
+    subtitle: 'Their first song. Their first choir. Their first stage.',
+    description: '30 students walked into Cadence Collective having never sung before. Four days later, they stood together on stage at KIIT-JEE Public School, Gurgaon, performing as a choir for the very first time. From hesitant first notes to a full ensemble performance, Cohort 5 turned four days of learning into a moment they could call their own.',
+    image: '/images/gallery/cohort-5-poster.jpg',
+    video: '/videos/gallery/cohort-5-showcase.mp4',
+    portrait: true,
+    reverse: false,
+  },
 ];
 
 const GalleryItem: React.FC<{ item: GalleryItem; index: number }> = ({ item, index }) => {
@@ -73,14 +94,16 @@ const GalleryItem: React.FC<{ item: GalleryItem; index: number }> = ({ item, ind
     >
       {/* Media Section */}
       <div className="w-full lg:w-1/2">
-        <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
+        <div className={`relative group overflow-hidden rounded-3xl shadow-2xl ${item.portrait ? 'mx-auto w-full max-w-[340px] lg:max-w-[360px] bg-primary-dark' : ''}`}>
           <div className="absolute inset-0 bg-accent/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
           {item.video ? (
             <video
               src={item.video}
               poster={item.image}
               controls
-              className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+              playsInline
+              preload="metadata"
+              className={`w-full ${item.portrait ? 'aspect-[9/16]' : 'h-[400px] lg:h-[500px]'} object-cover transition-transform duration-700 group-hover:scale-105`}
             />
           ) : (
             <img

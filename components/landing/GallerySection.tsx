@@ -21,20 +21,20 @@ const galleryItems = [
     label: "Cohort 3",
   },
   {
+    id: "cohort4",
+    type: "video",
+    src: "/videos/gallery/cohort-4-showcase.mp4",
+    alt: "Cohort 4 Choir Showcase",
+    className: "md:col-span-1 md:row-span-2",
+    label: "Cohort 4",
+  },
+  {
     id: "cohort1",
     type: "image",
     src: "/images/gallery/cohort-1.jpeg",
     alt: "Cohort 1",
     className: "md:col-span-1 md:row-span-1",
     label: "Cohort 1",
-  },
-  {
-    id: "cohort2",
-    type: "image",
-    src: "/images/gallery/cohort-2.jpeg",
-    alt: "Cohort 2",
-    className: "md:col-span-1 md:row-span-1",
-    label: "Cohort 2",
   },
   {
     id: "online",
@@ -53,12 +53,28 @@ const galleryItems = [
     label: "Community",
   },
   {
+    id: "cohort2",
+    type: "image",
+    src: "/images/gallery/cohort-2.jpeg",
+    alt: "Cohort 2",
+    className: "md:col-span-1 md:row-span-1",
+    label: "Cohort 2",
+  },
+  {
     id: "feedback",
     type: "image",
     src: "/images/gallery/cohort-1-feedback.jpeg",
     alt: "Student Feedback",
     className: "md:col-span-2 md:row-span-1",
     label: "Feedback",
+  },
+  {
+    id: "cohort5",
+    type: "video",
+    src: "/videos/gallery/cohort-5-showcase.mp4",
+    alt: "Cohort 5 Choir Showcase",
+    className: "md:col-span-1 md:row-span-1",
+    label: "Cohort 5",
   },
 ];
 

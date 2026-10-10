@@ -18,8 +18,8 @@ const defaultContent: SiteContent = {
   stats: [
     { id: "s1", label: "Livestream Viewers", value: "500+", iconType: "globe" },
     { id: "s2", label: "Live Audience", value: "200+", iconType: "users" },
-    { id: "s3", label: "Graduates", value: "80+", iconType: "award" },
-    { id: "s4", label: "Cohorts", value: "3", iconType: "mic" },
+    { id: "s3", label: "Graduates", value: "155+", iconType: "award" },
+    { id: "s4", label: "Cohorts", value: "5", iconType: "mic" },
   ],
   mission: {
     title: "Mission",
@@ -105,7 +105,7 @@ const defaultContent: SiteContent = {
       whyStarted:
         "Cadence Collective was born from a desire to build a space where creativity feels honest, collaborative, and unapologetically real. What began as a personal outlet for expression grew into a community that champions individuality, shared rhythm, and the courage to create without apology. It is a place where students explore ideas, stories, and emotions with confidence and authenticity.",
       credentials: [
-        "Founder of Cadence Collective – 3 cohorts, 80+ graduates (2021–present)",
+        "Founder of Cadence Collective – 5 cohorts, 155+ graduates (2021–present)",
         "Brand Ambassador, Young Talent Music Competition (2021)",
         "Three-time World Champion, World Championship of Performing Arts (2022) (Gold & Bronze in Vocals)",
         "Distinction, Trinity Rock & Pop Vocals Grade 8 (2023)",
